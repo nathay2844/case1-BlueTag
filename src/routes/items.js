@@ -32,7 +32,7 @@ function searchItems({ q, category, kind }) {
   `;
   const params = [];
   if (q) {
-    sql += ` AND items.title || ' ' || items.description || ' ' || items.location LIKE '%${q}%'`;
+    sql += ` AND items.title || ' ' || items.description || ' ' || items.location LIKE ?`;
     params.push(`%${q}%`);
   }
 
